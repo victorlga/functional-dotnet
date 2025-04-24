@@ -1,5 +1,11 @@
 ﻿using LoanRules;
 
-string msg = Say.hello("John Doe");
+var customer = new Customer(30, 60000, 700);
+var loan = new Loan(12000, 1.05, 12);
 
-Console.WriteLine(msg);
+bool isEligible = Eligibility.isEligible(
+    customer,
+    loan
+);
+
+Console.WriteLine($"isEligible: {isEligible}");
